@@ -1,9 +1,18 @@
-import { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { CarInfo, fetchCarList } from './Cars';
+import { fetchCarList } from './Cars';
 
-export default function CarList() {
-  const [cars, setCars] = useState<CarInfo[]>([]);
+interface Car {
+  id: number;
+  name: string;
+}
+
+interface CarListProps {
+  user: string;
+}
+
+export default function CarList({ user }: CarListProps) {
+  const [cars, setCars] = useState<Car[]>([]);
 
   useEffect(() => {
     fetchCarList()
@@ -13,7 +22,7 @@ export default function CarList() {
 
   return (
     <div>
-      <h2>Car List</h2>
+      <h2>Car List for {user}</h2>
       <ul>
         {cars.map(car => (
           <li key={car.id}>
@@ -24,5 +33,4 @@ export default function CarList() {
     </div>
   );
 }
-
 

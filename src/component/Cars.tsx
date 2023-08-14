@@ -33,4 +33,15 @@ export interface CarInfo {
       return null;
     }
   }
+
+
+export function saveCollection(collection: CarInfo[]): void {
+  localStorage.setItem('carCollection', JSON.stringify(collection));
+}
+
+export function loadCollection(): CarInfo[] {
+  const storedCollection = localStorage.getItem('carCollection');
+  return storedCollection ? JSON.parse(storedCollection) : [];
+}
+
   
