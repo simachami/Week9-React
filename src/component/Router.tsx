@@ -9,7 +9,7 @@ export default function Router() {
    
     <Routes>
       <Route path="/" element={<Header />} />
-      <Route path="/cars" element={<CarList />} />
+      <Route path="/cars" element={<CarList user={''} />} />
       <Route path="/car/:id" element={<CarDetails />} />
     </Routes>
   );
