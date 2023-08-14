@@ -9,6 +9,7 @@ export default function Header() {
         <Navbar.Brand>Car Inventory Dashboard</Navbar.Brand>
       </Container>
       <Nav.Item>
+      <Nav.Link className='cars' href='/cars'>Cars</Nav.Link>
         <Nav.Link className='signin' href='/login'>Sign In</Nav.Link>
         <Nav.Link className='signup' href='/login'>Sign Up</Nav.Link>
       </Nav.Item>

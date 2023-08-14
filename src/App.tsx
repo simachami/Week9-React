@@ -1,30 +1,16 @@
 //import React from 'react';
-
-import Header from './component/Header';
-import Main from './component/Main';
-import Footer from './component/Footer';
-
-interface CarDetails {
-  name: string;
-  make: string;
-  model: string;
-  year: number;
-}
-
-const carDetails: CarDetails = {
-  name: 'Cool car bro',
-  make: 'Mazda',
-  model: 'CX-5',
-  year: 2023,
-};
+import { BrowserRouter as Router } from 'react-router-dom';
+import AppRouter from './component/Router';
+//import Footer from './component/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Main car={carDetails} />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+      <h1>Welcome to The Coolest Car Inventory Dashboard</h1>
+        <AppRouter />
+      </div>
+    </Router>
   );
 }
 
